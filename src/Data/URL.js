@@ -6,8 +6,12 @@ function getFormUrl(){
     return getUrl() + "/api/form";
 }
 
-function getLoginData(){
-    return getUrl();
+function getLoginUrl(){
+    return getUrl() + '/login';
 }
 
-module.exports = { getUrl, getFormUrl, getLoginData };
+function getRegisterUrl(){
+    return getUrl() + '/login';
+}
+
+module.exports = { getUrl, getFormUrl, getLoginUrl,getRegisterUrl };
