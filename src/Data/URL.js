@@ -1,5 +1,5 @@
 function getUrl(){
-    return "localhost:8080";
+    return "http://localhost:8080";
 }
 
 function getFormUrl(){
@@ -11,7 +11,7 @@ function getLoginUrl(){
 }
 
 function getRegisterUrl(){
-    return getUrl() + '/login';
+    return getUrl() + 'api/register';
 }
 
 module.exports = { getUrl, getFormUrl, getLoginUrl,getRegisterUrl };

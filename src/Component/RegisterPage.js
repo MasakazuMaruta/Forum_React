@@ -14,16 +14,20 @@ function RegisterPage() {
         setUserData({ ...userData, [name]: value });
     };
 
-    // フォームのサブミット時の処理
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             const response = await axios.post(getRegisterUrl(), userData);
-            console.log('登録成功:', response.data);
-            navigate("/form"); // フォームの登録が成功したら指定のページに移動する
+            if (response && response.data !== undefined) {
+                console.log('登録成功:', response.data);
+                navigate("/form");
+            } else {
+                console.error('登録エラー: レスポンスが得られませんでした');
+                setError('登録エラーが発生しました');
+            }
         } catch (error) {
-            console.error('登録エラー:', error.response.data.message);
-            setError(error.response.data.message);
+            console.error('登録エラー:', error.response ? error.response.data.message : error.message);
+            setError(error.response ? error.response.data.message : error.message);
         }
     };
 
