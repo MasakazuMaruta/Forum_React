@@ -7,7 +7,7 @@ function getFormUrl(){
 }
 
 function getLoginUrl(){
-    return getUrl() + '/login';
+    return getUrl() + "/login";
 }
 
 function getRegisterUrl(){

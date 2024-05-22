@@ -41,14 +41,14 @@ function LoginPage(){
     };
     return(
         <>
-        <form onSubmit={handleSubmit} style={{ textAlign: "center" }}>
+        <form style={{ textAlign: "center" }}>
             <span>ID:</span>
-            <input name = "username" type="text" value = {userData.username} onChange={handleChange}/>
+            <input name = 'username' type='text' value = {userData.username} onChange={handleChange}/>
             <br></br>
             <span>Password:</span>
-            <input name = "password" type="text" value = {userData.password} onChange={handleChange}/>
+            <input name = 'password' type='text' value = {userData.password} onChange={handleChange}/>
             <br></br>
-            <button onClick={handleClick}>ログイン</button>
+            <button onClick={() => navigate('/auth',{state:{user:userData.username,pass:userData.password},replace : true})}>送信</button>
         </form>
         <form >
             <button onClick={handleRegisterSubmit}>登録サイトへ</button>
